@@ -1,2 +1,16 @@
 .main {
 }
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  padding-inline: 15vw;
+}
+
+@media (max-width: 768px) {
+  .products {
+    padding-inline: 5vw;
+  }
+}
