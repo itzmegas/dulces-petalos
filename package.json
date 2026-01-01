@@ -12,6 +12,7 @@
     "check": "biome check"
   },
   "dependencies": {
+    "@tabler/icons-react": "^3.36.0",
     "@tanstack/react-devtools": "^0.7.0",
     "@tanstack/react-router": "^1.132.0",
     "@tanstack/react-router-devtools": "^1.132.0",
