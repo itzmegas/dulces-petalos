@@ -1,3 +1,8 @@
 .layout {
   display: grid;
 }
+
+.header {
+  composes: flex_container from "@/styles/base.module.css";
+  padding: 1rem;
+}

@@ -1,6 +1,6 @@
+import { IconArrowUpRight } from "@tabler/icons-react";
 import type { Product as ProductType } from "@/types";
-import { Card } from "../ui/Card";
-
+import { Button } from "../ui/Button";
 import classes from "./Product.module.css";
 
 interface ProductProps {
@@ -9,12 +9,19 @@ interface ProductProps {
 
 export const Product = ({ product }: ProductProps) => {
 	return (
-		<Card>
+		<div className={classes.card}>
 			<h2>{product.name}</h2>
-			<p>{product.binomialName}</p>
+			<p className={classes.subtitle}>{product.binomialName}</p>
 			<div className={classes.card_image}>
 				<img src={product.imgUrl} alt={product.name} />
+
+				<div className={classes.footer}>
+					<div className={classes.price}>{`€ ${product.price}`}</div>
+					<Button>
+						<IconArrowUpRight />
+					</Button>
+				</div>
 			</div>
-		</Card>
+		</div>
 	);
 };

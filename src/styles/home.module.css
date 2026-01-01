@@ -1,5 +1,6 @@
 .page {
   --direction: column;
+  padding-block: 2rem;
   composes: flex_container from "./base.module.css";
 }
 
