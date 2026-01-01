@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useProducts } from "@/api/hooks/useProducts";
+import { InputSearch } from "@/components/InputSearch";
 import { Product } from "@/components/Product";
 import classes from "@/styles/home.module.css";
 
@@ -12,7 +13,7 @@ function App() {
 
 	return (
 		<div className={classes.page}>
-			<input type="text" />
+			<InputSearch />
 			{isLoading && <div>Loading...</div>}
 
 			<div className={classes.products}>

@@ -1,0 +1,19 @@
+.container {
+  composes: flex_container from "@/styles/base.module.css";
+  --content: flex-start;
+  --direction: row;
+
+  border: 1px solid #bbbbbb;
+  border-radius: 8px;
+  padding-inline: 1rem;
+  padding-block: 8px;
+  width: 50vw;
+}
+
+.input {
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}

@@ -3,7 +3,7 @@
   --items: flex-start;
   --gap: 0.5rem;
   border-radius: 2rem;
-  border: 1px solid /* #f1f1f1 */ red;
+  border: 1px solid #f1f1f1;
   box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
 
