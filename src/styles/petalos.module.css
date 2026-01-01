@@ -1,4 +1,6 @@
-.main {
+.page {
+  --direction: column;
+  composes: flex_container from "./base.module.css";
 }
 
 .products {

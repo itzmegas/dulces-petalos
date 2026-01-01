@@ -1,0 +1,7 @@
+.flex_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-direction: var(--direction, row);
+}

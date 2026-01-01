@@ -12,7 +12,7 @@ export const Product = ({ product }: ProductProps) => {
 		<Card>
 			<h2>{product.name}</h2>
 			<p>{product.binomialName}</p>
-			<div className={classes.cardImage}>
+			<div className={classes.card_image}>
 				<img src={product.imgUrl} alt={product.name} />
 			</div>
 		</Card>
