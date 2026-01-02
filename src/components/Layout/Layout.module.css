@@ -2,12 +2,19 @@
   display: grid;
   grid-template-rows: auto 1fr;
   min-height: 100vh;
-  padding-inline: 15vw;
 }
 
 .header {
   composes: flex_container from "@/styles/base.module.css";
-  padding: 1rem;
+  background-color: white;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+}
+
+.body {
+  background-color: #f9f9f9;
+  padding-inline: 20vw;
+  padding-block: 1rem;
 }
 
 @media (max-width: 768px) {
