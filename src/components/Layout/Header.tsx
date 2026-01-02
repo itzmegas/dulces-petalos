@@ -1,7 +1,5 @@
-import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-
 import classes from "./Layout.module.css";
+
 export const Header = () => {
 	return (
 		<header className={classes.header}>

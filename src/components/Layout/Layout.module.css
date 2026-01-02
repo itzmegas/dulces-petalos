@@ -1,8 +1,17 @@
 .layout {
   display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  padding-inline: 15vw;
 }
 
 .header {
   composes: flex_container from "@/styles/base.module.css";
   padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    padding-inline: 5vw;
+  }
 }
