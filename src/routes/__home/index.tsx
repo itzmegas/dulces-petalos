@@ -15,6 +15,10 @@ function App() {
 	const [search, setSearch] = useState("");
 	const { products, isLoading } = useProducts();
 
+	const filteredProducts = products.filter((product) =>
+		product.name.toLowerCase().includes(search.toLowerCase()),
+	);
+
 	if (isLoading) {
 		return <HomeSkeleton />;
 	}
@@ -29,13 +33,13 @@ function App() {
 			/>
 
 			<div className={classes.products}>
-				{products
-					.filter((product) =>
-						product.name.toLowerCase().includes(search.toLowerCase()),
-					)
-					.map((product) => (
+				{filteredProducts.length === 0 ? (
+					<p>No se encontraron coincidencias</p>
+				) : (
+					filteredProducts.map((product) => (
 						<Product key={product.id} product={product} />
-					))}
+					))
+				)}
 			</div>
 		</div>
 	);
