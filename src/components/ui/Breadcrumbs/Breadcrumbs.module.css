@@ -1,0 +1,9 @@
+.breadcrumbs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.path:hover {
+  text-decoration: underline;
+  color: rgb(82, 82, 248);
+}
