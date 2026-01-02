@@ -5,6 +5,7 @@ import { useProducts } from "@/api/hooks/useProducts";
 import { Product } from "@/components/Product";
 import { InputText } from "@/components/ui";
 import classes from "@/styles/home.module.css";
+import { HomeSkeleton } from "./__home.skeleton";
 
 export const Route = createFileRoute("/__home/")({
 	component: App,
@@ -14,6 +15,10 @@ function App() {
 	const [search, setSearch] = useState("");
 	const { products, isLoading } = useProducts();
 
+	if (isLoading) {
+		return <HomeSkeleton />;
+	}
+
 	return (
 		<div className={classes.page}>
 			<InputText
@@ -22,8 +27,6 @@ function App() {
 				value={search}
 				onChange={(e) => setSearch(e.target.value)}
 			/>
-
-			{isLoading && <div>Loading...</div>}
 
 			<div className={classes.products}>
 				{products

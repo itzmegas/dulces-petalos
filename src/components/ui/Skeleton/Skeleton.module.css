@@ -1,0 +1,31 @@
+@keyframes skeleton-fade {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.skeleton {
+  height: var(--skeleton-height, auto);
+  width: var(--skeleton-width, 100%);
+  max-height: var(--skeleton-max-height, auto);
+  min-height: var(--skeleton-min-height, auto);
+  max-width: var(--skeleton-max-width, auto);
+  min-width: var(--skeleton-min-width, auto);
+  border-radius: var(--skeleton-radius, 1rem);
+  position: relative;
+  overflow: hidden;
+  animation: skeleton-fade 1500ms linear infinite;
+}
+
+.skeleton::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  background-color: #ecebeb;
+}
