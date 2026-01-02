@@ -13,8 +13,10 @@ export const InputText = ({ leftIcon, ...props }: InputTextProps) => {
 
 	return (
 		<label className={classes.container}>
-			{leftIcon}
-			<input {...inputProps} />
+			<div className={classes.wrapper}>
+				{leftIcon}
+				<input {...inputProps} />
+			</div>
 		</label>
 	);
 };
