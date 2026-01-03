@@ -12,7 +12,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
 		const path = root + item;
 
 		return (
-			<Link key={path} to={path}>
+			<Link key={path} to={path} disabled={location.pathname === path}>
 				{i === 0 ? "Inicio" : item}
 			</Link>
 		);
@@ -22,7 +22,7 @@ export const Layout = ({ children }: PropsWithChildren) => {
 		<div className={classes.layout}>
 			<Header />
 			<div className={classes.body}>
-				<Breadcrumbs breadcrumbs={breadcrumbs} />
+				{location.pathname !== "/" && <Breadcrumbs breadcrumbs={breadcrumbs} />}
 				{children}
 			</div>
 		</div>

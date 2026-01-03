@@ -13,18 +13,6 @@
 
 .body {
   background-color: #f9f9f9;
-  padding-inline: 15vw;
   padding-block: 1rem;
-}
-
-@media (max-width: 1280px) {
-  .body {
-    padding-inline: 10vw;
-  }
-}
-
-@media (max-width: 768px) {
-  .body {
-    padding-inline: 5vw;
-  }
+  padding-inline: 10vw;
 }

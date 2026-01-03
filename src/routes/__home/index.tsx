@@ -15,8 +15,10 @@ function App() {
 	const [search, setSearch] = useState("");
 	const { products, isLoading } = useProducts();
 
-	const filteredProducts = products.filter((product) =>
-		product.name.toLowerCase().includes(search.toLowerCase()),
+	const filteredProducts = products.filter(
+		(product) =>
+			product.name.toLowerCase().includes(search.toLowerCase()) ||
+			product.binomialName.toLowerCase().includes(search.toLowerCase()),
 	);
 
 	if (isLoading) {
