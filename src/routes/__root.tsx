@@ -9,17 +9,19 @@ export const Route = createRootRoute({
 			<Layout>
 				<Outlet />
 			</Layout>
-			<TanStackDevtools
-				config={{
-					position: "bottom-right",
-				}}
-				plugins={[
-					{
-						name: "Tanstack Router",
-						render: <TanStackRouterDevtoolsPanel />,
-					},
-				]}
-			/>
+			{import.meta.env.MODE === "development" && (
+				<TanStackDevtools
+					config={{
+						position: "bottom-right",
+					}}
+					plugins={[
+						{
+							name: "Tanstack Router",
+							render: <TanStackRouterDevtoolsPanel />,
+						},
+					]}
+				/>
+			)}
 		</>
 	),
 	notFoundComponent: () => <NotFound />,
