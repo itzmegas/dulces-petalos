@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import type { CSSProperties } from "react";
-import { useProduct } from "@/api/hooks";
+
+import { getProduct } from "@/api/services";
 import { Button } from "@/components/ui";
 import classes from "@/styles/product.module.css";
 
 export const Route = createFileRoute("/$productId")({
 	component: RouteComponent,
+	loader: ({ params }) => getProduct(params.productId),
 });
 
 type FertilizerType = "phosphorus" | "nitrogen";
@@ -17,9 +18,9 @@ const translateFertilizerType: Record<FertilizerType, string> = {
 
 function RouteComponent() {
 	const { productId } = Route.useParams();
-	const { product, isLoading } = useProduct(productId);
+	const product = Route.useLoaderData();
 
-	if (isLoading || !product) {
+	if (!product) {
 		return null;
 	}
 	return (

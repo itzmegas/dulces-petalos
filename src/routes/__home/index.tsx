@@ -1,29 +1,25 @@
 import { IconSearch } from "@tabler/icons-react";
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { useProducts } from "@/api/hooks/useProducts";
+import { getProducts } from "@/api/services";
 import { Product } from "@/components/Product";
 import { InputText } from "@/components/ui";
 import classes from "@/styles/home.module.css";
-import { HomeSkeleton } from "./__home.skeleton";
 
 export const Route = createFileRoute("/__home/")({
 	component: App,
+	loader: () => getProducts(),
 });
 
 function App() {
 	const [search, setSearch] = useState("");
-	const { products, isLoading } = useProducts();
+	const products = Route.useLoaderData();
 
 	const filteredProducts = products.filter(
 		(product) =>
 			product.name.toLowerCase().includes(search.toLowerCase()) ||
 			product.binomialName.toLowerCase().includes(search.toLowerCase()),
 	);
-
-	if (isLoading) {
-		return <HomeSkeleton />;
-	}
 
 	return (
 		<div className={classes.page}>
