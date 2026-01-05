@@ -3,10 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 import { getProduct } from "@/api/services";
 import { Button } from "@/components/ui";
 import classes from "@/styles/product.module.css";
+import { ErrorProduct } from "./__error-product";
 
-export const Route = createFileRoute("/$productId")({
+export const Route = createFileRoute("/$productId/")({
 	component: RouteComponent,
 	loader: ({ params }) => getProduct(params.productId),
+	errorComponent: () => <ErrorProduct />,
 });
 
 type FertilizerType = "phosphorus" | "nitrogen";

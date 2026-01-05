@@ -5,10 +5,12 @@ import { getProducts } from "@/api/services";
 import { Product } from "@/components/Product";
 import { InputText } from "@/components/ui";
 import classes from "@/styles/home.module.css";
+import { HomeSkeleton } from "./__home.skeleton";
 
 export const Route = createFileRoute("/__home/")({
 	component: App,
 	loader: () => getProducts(),
+	pendingComponent: () => <HomeSkeleton />,
 });
 
 function App() {

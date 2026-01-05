@@ -16,3 +16,9 @@
   padding-block: 1rem;
   padding-inline: 10vw;
 }
+
+@media (max-width: 768px) {
+  .body {
+    padding-inline: 5vw;
+  }
+}
