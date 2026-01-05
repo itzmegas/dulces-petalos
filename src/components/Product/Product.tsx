@@ -1,6 +1,5 @@
 import { IconArrowUpRight } from "@tabler/icons-react";
 import { Link } from "@tanstack/react-router";
-import type { CSSProperties } from "react";
 import type { Product as ProductType } from "@/types";
 import { Button } from "../ui/Button";
 import classes from "./Product.module.css";
@@ -18,11 +17,9 @@ export const Product = ({ product }: ProductProps) => {
 				<img
 					src={product.imgUrl}
 					alt={product.name}
-					style={
-						{
-							viewTransitionName: `product-image-${product.id}`,
-						} as CSSProperties
-					}
+					style={{
+						viewTransitionName: `product-image-${product.id}`,
+					}}
 				/>
 
 				<div className={classes.footer}>

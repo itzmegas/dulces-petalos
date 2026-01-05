@@ -23,16 +23,15 @@ function RouteComponent() {
 		return null;
 	}
 	return (
-		<div
-			className={classes.container}
-			style={
-				{
-					viewTransitionName: `product-image-${productId}`,
-				} as CSSProperties
-			}
-		>
+		<div className={classes.container}>
 			<div className={classes.image}>
-				<img src={product.imgUrl} alt={product.name} />
+				<img
+					src={product.imgUrl}
+					alt={product.name}
+					style={{
+						viewTransitionName: `product-image-${productId}`,
+					}}
+				/>
 			</div>
 
 			<div className={classes.product_info}>
