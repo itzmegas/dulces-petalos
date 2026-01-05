@@ -1,14 +1,13 @@
 .card {
   composes: flex_container from "@/styles/base.module.css";
   --items: flex-start;
-  --gap: 0.5rem;
+  --gap: 0;
   border-radius: 2rem;
   border: 1px solid #f1f1f1;
   box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
-
-  min-width: 400px;
 }
+
 .subtitle {
   color: #606060;
 }
@@ -28,24 +27,24 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 16/9;
   border-radius: 2rem;
+  display: block;
 }
 
 .price {
-  display: flex;
   background-color: white;
   border-radius: 2rem;
   padding-block: 0.625rem;
   padding-inline: 1rem;
-
-  text-align: center;
+  font-weight: 500;
 }
 
 .footer {
   position: absolute;
   bottom: 10px;
   width: 100%;
-  padding-inline: 0.4rem;
+  padding-inline: 0.6rem;
   display: flex;
   justify-content: space-between;
 }

@@ -1,4 +1,5 @@
 import { IconArrowUpRight } from "@tabler/icons-react";
+import { Link } from "@tanstack/react-router";
 import type { Product as ProductType } from "@/types";
 import { Button } from "../ui/Button";
 import classes from "./Product.module.css";
@@ -13,13 +14,21 @@ export const Product = ({ product }: ProductProps) => {
 			<h2>{product.name}</h2>
 			<p className={classes.subtitle}>{product.binomialName}</p>
 			<div className={classes.card_image}>
-				<img src={product.imgUrl} alt={product.name} />
+				<img
+					src={product.imgUrl}
+					alt={product.name}
+					style={{
+						viewTransitionName: `product-image-${product.id}`,
+					}}
+				/>
 
 				<div className={classes.footer}>
 					<div className={classes.price}>{`€ ${product.price}`}</div>
-					<Button>
-						<IconArrowUpRight />
-					</Button>
+					<Link to={`${product.id}`} viewTransition>
+						<Button>
+							<IconArrowUpRight />
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</div>

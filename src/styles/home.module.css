@@ -1,19 +1,15 @@
 .page {
-  --direction: column;
-  padding-block: 2rem;
   composes: flex_container from "./base.module.css";
+  --direction: column;
+  --content: flex-start;
+  --gap: 3rem;
+  padding-block: 2rem;
 }
 
 .products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  grid-gap: 1.5rem;
   width: 100%;
-  padding-inline: 15vw;
-}
-
-@media (max-width: 768px) {
-  .products {
-    padding-inline: 5vw;
-  }
 }

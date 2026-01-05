@@ -7,7 +7,16 @@
   border-radius: 8px;
   padding-inline: 1rem;
   padding-block: 8px;
-  width: 50vw;
+  width: 100%;
+  max-width: 45rem;
+  background-color: white;
+  cursor: text;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .input {

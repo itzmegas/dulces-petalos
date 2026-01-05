@@ -3,8 +3,10 @@
 
   composes: flex_container from "@/styles/base.module.css";
 
-  padding: 0.5rem;
   border: none;
+  padding: var(--padding, 0.5rem);
+  color: var(--c, #000000);
+  font-weight: 600;
   border-radius: var(--radius, 2rem);
   background-color: var(--color);
   cursor: pointer;

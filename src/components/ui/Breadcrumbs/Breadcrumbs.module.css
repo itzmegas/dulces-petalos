@@ -1,0 +1,16 @@
+.breadcrumbs {
+  display: flex;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.path:hover {
+  text-decoration: underline;
+  color: rgb(82, 82, 248);
+}
+
+.path[data-disabled="true"] {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}

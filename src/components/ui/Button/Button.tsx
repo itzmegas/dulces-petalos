@@ -1,9 +1,12 @@
+import { clsx } from "clsx";
 import type { ComponentProps, CSSProperties } from "react";
 import classes from "./Button.module.css";
 
 interface ButtonProps extends ComponentProps<"button"> {
 	color?: string;
+	c?: string;
 	radius?: string;
+	padding?: string;
 }
 
 export const Button = ({
@@ -11,7 +14,10 @@ export const Button = ({
 	type,
 	style,
 	color,
+	c,
 	radius,
+	padding,
+	className,
 	...restProps
 }: ButtonProps) => {
 	const buttonProps: ButtonProps = {
@@ -20,8 +26,10 @@ export const Button = ({
 			...style,
 			"--color": color,
 			"--radius": radius,
+			"--padding": padding,
+			"--c": c,
 		} as CSSProperties,
-		className: classes.button,
+		className: clsx(classes.button, className),
 		...restProps,
 	};
 

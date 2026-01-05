@@ -1,12 +1,14 @@
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
-import { Header, Layout } from "@/components/Layout";
+import { Layout } from "@/components/Layout";
+import { NotFound } from "./__not-found";
 export const Route = createRootRoute({
 	component: () => (
-		<Layout>
-			<Header />
-			<Outlet />
+		<>
+			<Layout>
+				<Outlet />
+			</Layout>
 			<TanStackDevtools
 				config={{
 					position: "bottom-right",
@@ -18,6 +20,7 @@ export const Route = createRootRoute({
 					},
 				]}
 			/>
-		</Layout>
+		</>
 	),
+	notFoundComponent: () => <NotFound />,
 });

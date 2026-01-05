@@ -1,8 +1,24 @@
 .layout {
   display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
 }
 
 .header {
   composes: flex_container from "@/styles/base.module.css";
-  padding: 1rem;
+  background-color: white;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+}
+
+.body {
+  background-color: #f9f9f9;
+  padding-block: 1rem;
+  padding-inline: 10vw;
+}
+
+@media (max-width: 768px) {
+  .body {
+    padding-inline: 5vw;
+  }
 }
